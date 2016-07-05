@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     let eventStore = EKEventStore()
     var reminders: [EKCalendar]?
     
+    var Datasource = [Task]()
+    
     @IBOutlet weak var needPermissionView: UIView!
     @IBOutlet weak var loginEmail: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
@@ -69,6 +71,7 @@ class ViewController: UIViewController {
 
     func checkCalendarAuthorisation() {
         let status = EKEventStore.authorizationStatus(for: EKEntityType.reminder)
+        print(status)
         
         switch(status) {
         case EKAuthorizationStatus.notDetermined:
@@ -76,9 +79,12 @@ class ViewController: UIViewController {
             requestAccessToCalendar()
         case EKAuthorizationStatus.authorized:
             //We have access
+            print("------We have access")
             DispatchQueue.main.async(execute: {
                 self.loadReminders()
-            })        case EKAuthorizationStatus.denied:
+            })
+            print("There are \(Datasource.count) High Priority Reminders!")
+        case EKAuthorizationStatus.denied:
             //Use has denied access
             needPermissionView.fadeIn()
         case EKAuthorizationStatus.restricted:
@@ -88,25 +94,34 @@ class ViewController: UIViewController {
     }
     
     func requestAccessToCalendar() {
-//        eventStore.requestAccess(to: EKEntityType.reminder, completion:  {
-//            (accessGranted: Bool, error: NSError?) in
-//            
-//            if accessGranted == true {
-//                DispatchQueue.main.async(execute: {
-//                    self.loadReminders()
-//                })
-//            } else {
-//                DispatchQueue.main.async(execute: {
-//                    self.needPermissionView.fadeIn()
-//                })
-//            }
-//        })
+        eventStore.requestAccess(to: EKEntityType.reminder, completion: {
+            (accessGranted: Bool, error: NSError?) in
+            
+            if accessGranted == true {
+                DispatchQueue.main.async(execute: {
+                    self.loadReminders()
+                })
+            } else {
+                DispatchQueue.main.async(execute: {
+                    self.needPermissionView.fadeIn()
+                })
+            }
+        })
     }
     
     func loadReminders() {
+        //Think this is just reading in the Remainder Lists names
         reminders = eventStore.calendars(for: EKEntityType.reminder)
-        for task in self.reminders! {
-            print(task)
-        }
+
+        let predicate = eventStore.predicateForIncompleteReminders(withDueDateStarting: nil, ending: nil, calendars: [])
+        eventStore.fetchReminders(matching: predicate) { tasks in
+            for task in tasks! {
+                let saveTask = Task(title: task.title, priority: task.priority)
+                if task.priority == 1 {
+                    self.Datasource.append(saveTask)
+                    print("\(task.title) \(task.priority)")
+                }
+            }}
+
     }
 }
