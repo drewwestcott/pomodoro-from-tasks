@@ -1,0 +1,6 @@
+framework module Pods_Pomodoro_From_Tasks {
+  umbrella header "Pods-Pomodoro-From-Tasks-umbrella.h"
+
+  export *
+  module * { export * }
+}
