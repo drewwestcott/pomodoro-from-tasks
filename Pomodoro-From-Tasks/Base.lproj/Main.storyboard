@@ -183,7 +183,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PBb-fW-6QH">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="timerCell" id="sd6-y8-18H">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="timerCell" id="sd6-y8-18H" customClass="TimerCell" customModule="Pomodoro_From_Tasks" customModuleProvider="target">
                                         <frame key="frameInset" minY="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sd6-y8-18H" id="R90-zQ-vXI">
@@ -215,8 +215,16 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="ghc-k3-HEZ" secondAttribute="trailing" constant="50" id="xQK-3t-5VW"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="timerCompletedTimes" destination="swB-ys-K7F" id="lPG-AP-DCw"/>
+                                            <outlet property="timerTask" destination="biy-ry-FVe" id="3EH-b8-Zm2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5Jy-RI-mMk" id="P5j-3Q-kHh"/>
+                                    <outlet property="delegate" destination="5Jy-RI-mMk" id="R0S-cC-L3b"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atn-E8-Atd" userLabel="NeedPermission">
                                 <subviews>
@@ -279,6 +287,7 @@
                     </view>
                     <connections>
                         <outlet property="needPermissionView" destination="atn-E8-Atd" id="WFf-Hn-YE1"/>
+                        <outlet property="timerTableView" destination="PBb-fW-6QH" id="sdB-Hr-cMm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCL-R9-pIn" userLabel="First Responder" sceneMemberID="firstResponder"/>

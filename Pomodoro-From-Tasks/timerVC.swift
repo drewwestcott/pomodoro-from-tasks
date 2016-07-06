@@ -10,16 +10,19 @@ import UIKit
 import EventKit
 
 
-class timerVC: UIViewController {
+class timerVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var needPermissionView: UIView!
+    @IBOutlet weak var timerTableView: UITableView!
     
     let eventStore = EKEventStore()
     var reminders: [EKCalendar]?
     var Datasource = [Task]()
     
     override func viewDidLoad() {
-        // Stuff for load time.
+        timerTableView.delegate = self
+        timerTableView.dataSource = self
+        needPermissionView.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,6 +43,7 @@ class timerVC: UIViewController {
             DispatchQueue.main.async(execute: {
                 self.loadReminders()
             })
+
         case EKAuthorizationStatus.denied:
             //Use has denied access
             needPermissionView.fadeIn()
@@ -84,6 +88,24 @@ class timerVC: UIViewController {
                 }
             }}
         
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Datasource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = timerTableView.dequeueReusableCell(withIdentifier: "timerCell") as? TimerCell
+        
+        let task = Datasource[indexPath.row]
+        //cell?.configureTimerCell(task: task)
+        cell?.timerTask.text = task.title
+        cell?.timerCompletedTimes.text = "\(task.priority)"
+        return cell!
     }
 
 }
