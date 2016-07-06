@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11163.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11163.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Jy-RI-mMk">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11133"/>
@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pomodoro_From_Tasks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" title="Login" id="BYZ-38-t0r" customClass="ViewController" customModule="Pomodoro_From_Tasks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -148,10 +148,10 @@
             </objects>
             <point key="canvasLocation" x="-897" y="183"/>
         </scene>
-        <!--TimerVC-->
+        <!--Timer-->
         <scene sceneID="aig-p3-b5i">
             <objects>
-                <viewController id="5Jy-RI-mMk" customClass="timerVC" customModule="Pomodoro_From_Tasks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="timers" title="Timer" id="5Jy-RI-mMk" customClass="timerVC" customModule="Pomodoro_From_Tasks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qfg-cR-Cpw"/>
                         <viewControllerLayoutGuide type="bottom" id="WnS-Et-aa0"/>
@@ -160,7 +160,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOu-dl-jOi">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOu-dl-jOi" userLabel="Top Bar">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get to work" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzv-Dv-oU6">
                                         <constraints>
@@ -218,20 +218,67 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atn-E8-Atd" userLabel="NeedPermission">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We need permission to access your calendar and reminders in order to check which tasks you want to Focus on." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pih-4Q-voS">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="Zie-rb-aPv"/>
+                                            <constraint firstAttribute="height" constant="100" id="amQ-Z5-zik"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBB-Z7-ctz">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="2b2-iq-kTX"/>
+                                            <constraint firstAttribute="width" constant="98" id="FVR-TD-xbn"/>
+                                        </constraints>
+                                        <state key="normal" title="Go to Settings">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToSettingsWithSender:" destination="5Jy-RI-mMk" eventType="touchUpInside" id="gJR-xE-qhG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Pih-4Q-voS" firstAttribute="centerX" secondItem="atn-E8-Atd" secondAttribute="centerX" id="DEQ-wD-Dpy"/>
+                                    <constraint firstItem="EBB-Z7-ctz" firstAttribute="centerX" secondItem="atn-E8-Atd" secondAttribute="centerX" id="Dlm-cq-29B"/>
+                                    <constraint firstItem="Pih-4Q-voS" firstAttribute="centerX" secondItem="atn-E8-Atd" secondAttribute="centerX" id="h8s-t9-irN"/>
+                                    <constraint firstAttribute="bottom" secondItem="EBB-Z7-ctz" secondAttribute="bottom" constant="10" id="j0m-nO-ksr"/>
+                                    <constraint firstItem="Pih-4Q-voS" firstAttribute="top" secondItem="atn-E8-Atd" secondAttribute="top" constant="22" id="nN3-O8-maF"/>
+                                    <constraint firstItem="Pih-4Q-voS" firstAttribute="top" secondItem="atn-E8-Atd" secondAttribute="top" constant="26" id="rIk-Yj-08E"/>
+                                    <constraint firstAttribute="height" constant="200" id="uf7-gO-6t0"/>
+                                    <constraint firstItem="Pih-4Q-voS" firstAttribute="top" secondItem="atn-E8-Atd" secondAttribute="topMargin" constant="100" id="vFB-78-VDn"/>
+                                    <constraint firstItem="Pih-4Q-voS" firstAttribute="centerX" secondItem="atn-E8-Atd" secondAttribute="centerX" id="xx4-pW-Lzg"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DEQ-wD-Dpy"/>
+                                        <exclude reference="h8s-t9-irN"/>
+                                        <exclude reference="rIk-Yj-08E"/>
+                                        <exclude reference="vFB-78-VDn"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PBb-fW-6QH" firstAttribute="leading" secondItem="1JP-Vf-0ZY" secondAttribute="leading" id="2jA-nx-kap"/>
                             <constraint firstAttribute="trailing" secondItem="PBb-fW-6QH" secondAttribute="trailing" id="CEl-dv-ztK"/>
+                            <constraint firstAttribute="trailing" secondItem="atn-E8-Atd" secondAttribute="trailing" constant="20" id="GuH-iR-xRH"/>
                             <constraint firstItem="PBb-fW-6QH" firstAttribute="top" secondItem="lOu-dl-jOi" secondAttribute="bottom" constant="10" id="Gwp-f0-4jP"/>
                             <constraint firstItem="lOu-dl-jOi" firstAttribute="leading" secondItem="1JP-Vf-0ZY" secondAttribute="leading" id="Oru-rQ-hhG"/>
+                            <constraint firstItem="atn-E8-Atd" firstAttribute="leading" secondItem="1JP-Vf-0ZY" secondAttribute="leading" constant="20" id="Xj2-ky-5r8"/>
+                            <constraint firstItem="atn-E8-Atd" firstAttribute="centerY" secondItem="1JP-Vf-0ZY" secondAttribute="centerY" id="YIt-i2-Aac"/>
                             <constraint firstAttribute="trailing" secondItem="lOu-dl-jOi" secondAttribute="trailing" id="bPL-xI-jle"/>
                             <constraint firstItem="lOu-dl-jOi" firstAttribute="top" secondItem="1JP-Vf-0ZY" secondAttribute="top" id="jTN-IB-5eo"/>
                             <constraint firstItem="WnS-Et-aa0" firstAttribute="top" secondItem="PBb-fW-6QH" secondAttribute="bottom" id="uWL-gK-SLy"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="needPermissionView" destination="LRx-Zv-kTu" id="Chs-Nn-ZfK"/>
+                        <outlet property="needPermissionView" destination="atn-E8-Atd" id="WFf-Hn-YE1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCL-R9-pIn" userLabel="First Responder" sceneMemberID="firstResponder"/>

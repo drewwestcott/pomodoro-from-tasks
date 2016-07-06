@@ -17,6 +17,14 @@ class timerVC: UIViewController {
     let eventStore = EKEventStore()
     var reminders: [EKCalendar]?
     var Datasource = [Task]()
+    
+    override func viewDidLoad() {
+        // Stuff for load time.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        checkCalendarAuthorisation()
+    }
 
     func checkCalendarAuthorisation() {
         let status = EKEventStore.authorizationStatus(for: EKEntityType.reminder)
@@ -55,6 +63,11 @@ class timerVC: UIViewController {
                 })
             }
         })
+    }
+    
+    @IBAction func goToSettings(sender: UIButton) {
+        let openSettingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)
+        UIApplication.shared().openURL(openSettingsUrl! as URL)
     }
     
     func loadReminders() {
