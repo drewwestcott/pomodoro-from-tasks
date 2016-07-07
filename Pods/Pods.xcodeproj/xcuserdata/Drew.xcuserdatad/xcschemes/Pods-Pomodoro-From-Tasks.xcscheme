@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '655BD76817337348B6317386'
+               BlueprintIdentifier = '497E5D6868427F3D809DD73A'
                BlueprintName = 'Pods-Pomodoro-From-Tasks'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Pomodoro_From_Tasks.framework'>

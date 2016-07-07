@@ -46,9 +46,11 @@ class timerVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
         case EKAuthorizationStatus.denied:
             //Use has denied access
+            print("------Access Denied")
             needPermissionView.fadeIn()
         case EKAuthorizationStatus.restricted:
             //Use has denied access
+            print("------Access Restricted")
             needPermissionView.fadeIn()
         }
     }
@@ -66,6 +68,7 @@ class timerVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     self.needPermissionView.fadeIn()
                 })
             }
+            self.timerTableView.reloadData()
         })
     }
     
@@ -80,12 +83,15 @@ class timerVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let predicate = eventStore.predicateForIncompleteReminders(withDueDateStarting: nil, ending: nil, calendars: [])
         eventStore.fetchReminders(matching: predicate) { tasks in
+            print("-----------------------------------------------------")
             for task in tasks! {
                 let saveTask = Task(title: task.title, priority: task.priority)
                 if task.priority == 1 {
                     self.Datasource.append(saveTask)
-                    print("\(task.title) \(task.priority) \(task.creationDate)")
+                    print("Task Retrieved: \(task.title) \(task.priority) \(task.creationDate!)")
                 }
+                print("-----------------------------------------------------")
+
             }}
         
     }

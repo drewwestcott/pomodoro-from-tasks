@@ -36,5 +36,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSRemindersUsageDescription</key>
+	<string>We need access to your Reminders so we can list High Priority Reminders as Pomodoro timers.</string>
 </dict>
 </plist>

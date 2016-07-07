@@ -7,6 +7,7 @@ target 'Pomodoro-From-Tasks' do
 pod 'Firebase'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
+pod 'Firebase/Messaging'
 pod 'Firebase/Storage'
 end
 

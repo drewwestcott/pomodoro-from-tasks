@@ -11,7 +11,6 @@
 		3A56FA461D2AD8F00078EBDB /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56FA451D2AD8F00078EBDB /* UIViewExtention.swift */; };
 		3A56FA481D2AE12A0078EBDB /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56FA471D2AE12A0078EBDB /* MaterialView.swift */; };
 		3A56FA4A1D2AE1340078EBDB /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56FA491D2AE1340078EBDB /* MaterialButton.swift */; };
-		3A56FA4D1D2AE1500078EBDB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56FA4B1D2AE1500078EBDB /* Constants.swift */; };
 		3A56FA4F1D2AE4FD0078EBDB /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56FA4E1D2AE4FD0078EBDB /* DataService.swift */; };
 		3A6EB1901D2D7EFA00C27AA3 /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6EB18F1D2D7EFA00C27AA3 /* TimerCell.swift */; };
 		3A8452911D2C2BE700BAF8D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A8452901D2C2BE700BAF8D5 /* GoogleService-Info.plist */; };
@@ -23,6 +22,7 @@
 		3A88C3C01D2AD0D70017888B /* Pomodoro_From_TasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C3BF1D2AD0D70017888B /* Pomodoro_From_TasksTests.swift */; };
 		3A88C3CB1D2AD0D70017888B /* Pomodoro_From_TasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A88C3CA1D2AD0D70017888B /* Pomodoro_From_TasksUITests.swift */; };
 		3AE479B41D2C3F7F00465E0A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE479B31D2C3F7F00465E0A /* Task.swift */; };
+		49877D4D1D2E6A5100FBF680 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49877D4C1D2E6A5100FBF680 /* Constants.swift */; };
 		D2A8C19B93FAE9A7156407BB /* Pods_Pomodoro_From_Tasks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7540C830EE323E368DE0410 /* Pods_Pomodoro_From_Tasks.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +48,6 @@
 		3A56FA451D2AD8F00078EBDB /* UIViewExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
 		3A56FA471D2AE12A0078EBDB /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		3A56FA491D2AE1340078EBDB /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
-		3A56FA4B1D2AE1500078EBDB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3A56FA4E1D2AE4FD0078EBDB /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		3A6EB18F1D2D7EFA00C27AA3 /* TimerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
 		3A84528F1D2C26DA00BAF8D5 /* Pomodoro-From-Tasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Pomodoro-From-Tasks.entitlements"; sourceTree = "<group>"; };
@@ -68,6 +67,7 @@
 		3A88C3CC1D2AD0D70017888B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AE479B31D2C3F7F00465E0A /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		4395CD518B00306B243287F4 /* Pods-Pomodoro-From-Tasks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pomodoro-From-Tasks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pomodoro-From-Tasks/Pods-Pomodoro-From-Tasks.release.xcconfig"; sourceTree = "<group>"; };
+		49877D4C1D2E6A5100FBF680 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "../../../../Users/drewwestcott/Library/Mobile Documents/com~apple~CloudDocs/Swift Files/Constants.swift"; sourceTree = "<group>"; };
 		634E2EE458157866ECD241F9 /* Pods-Pomodoro-From-Tasks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pomodoro-From-Tasks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pomodoro-From-Tasks/Pods-Pomodoro-From-Tasks.debug.xcconfig"; sourceTree = "<group>"; };
 		C7540C830EE323E368DE0410 /* Pods_Pomodoro_From_Tasks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pomodoro_From_Tasks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,7 +114,7 @@
 		3A56FA4C1D2AE1500078EBDB /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				3A56FA4B1D2AE1500078EBDB /* Constants.swift */,
+				49877D4C1D2E6A5100FBF680 /* Constants.swift */,
 			);
 			name = Util;
 			path = "../../Firebase Social App/social-showcase/social-showcase";
@@ -421,9 +421,9 @@
 				3A56FA4F1D2AE4FD0078EBDB /* DataService.swift in Sources */,
 				3A88C3AD1D2AD0D70017888B /* ViewController.swift in Sources */,
 				3A88C3AB1D2AD0D70017888B /* AppDelegate.swift in Sources */,
+				49877D4D1D2E6A5100FBF680 /* Constants.swift in Sources */,
 				3A56FA481D2AE12A0078EBDB /* MaterialView.swift in Sources */,
 				3A56FA4A1D2AE1340078EBDB /* MaterialButton.swift in Sources */,
-				3A56FA4D1D2AE1500078EBDB /* Constants.swift in Sources */,
 				3A4BABA71D2D6E48002B8272 /* timerVC.swift in Sources */,
 				3A6EB1901D2D7EFA00C27AA3 /* TimerCell.swift in Sources */,
 			);
